@@ -1,0 +1,7 @@
+.gradle
+.devcontainer
+.mvn
+.vscode
+bin
+build
+target
