@@ -3,7 +3,7 @@
 docker build -q -t lxi .
 docker run --rm --name lxi -d -p 8080:8080 lxi
 
-sleep 55
+sleep 5
 
 RESULT=$(curl -s --header "Content-Type: application/json" \
   --request POST \

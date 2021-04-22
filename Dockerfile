@@ -3,9 +3,10 @@ FROM maven:3.8.1-openjdk-17-slim AS build
 WORKDIR /usr/local/app
 
 COPY pom.xml ./
-COPY src/ src/
+RUN mvn dependency:go-offline --batch-mode
 
-RUN mvn package
+COPY src/ src/
+RUN mvn package --batch-mode
 
 FROM openjdk:17-jdk-slim AS runtime
 
