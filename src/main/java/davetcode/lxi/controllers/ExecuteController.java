@@ -13,7 +13,7 @@ import davetcode.lxi.models.Cpu;
 public class ExecuteController {
   
   @PostMapping(path = "/execute", consumes = "application/json", produces = "application/json")
-  public Cpu Execute(@RequestBody Cpu cpu, @RequestParam("lowByte") int lowByte, @RequestParam("highByte") int highByte) {
+  public Cpu Execute(@RequestBody Cpu cpu, @RequestParam("operand1") int lowByte, @RequestParam("operand2") int highByte) {
     switch (cpu.getOpcode())
     {
       case 0x01:
