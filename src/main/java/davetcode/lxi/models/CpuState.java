@@ -12,9 +12,10 @@ public class CpuState {
   private int ProgramCounter;
   private long Cycles;
   private CpuFlags Flags;
+  private boolean InterruptsEnabled;
   
   public CpuState(int a, int b, int c, int d, int e, int h, int l, int stackPointer, int programCounter,
-      long cycles, CpuFlags flags) {
+      long cycles, CpuFlags flags, boolean interruptsEnabled) {
     setA(a);
     setB(b);
     setC(c);
@@ -26,6 +27,7 @@ public class CpuState {
     setProgramCounter(programCounter);
     setCycles(cycles);
     setFlags(flags);
+    setInterruptsEnabled(interruptsEnabled);
   }
 
   public CpuFlags getFlags() {
@@ -114,5 +116,13 @@ public class CpuState {
 
   public void setA(int a) {
     this.A = a;
+  }
+
+  public void setInterruptsEnabled(boolean interruptsEnabled) {
+    this.InterruptsEnabled = interruptsEnabled;
+  }
+
+  public boolean isInterruptsEnabled() {
+    return InterruptsEnabled;
   }
 }
